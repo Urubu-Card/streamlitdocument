@@ -1,6 +1,10 @@
 import streamlit as st
 import time
 import datetime
+
+st.set_page_config(page_icon="🧾",page_title="Documentação : ")
+st.title("StreamLit Documentação:")
+
 #    uuu      uuu   rrrrrrrrrr      uuu      uuu   bbbbbbbbbb      uuu      uuu             xx         xx       dddddddd
 #    uuu      uuu   rrr    rrr      uuu      uuu   bbb     bbb     uuu      uuu               xx     xx         ddd     ddd
 #    uuu      uuu   rrr    rrr      uuu      uuu   bbb     bbb     uuu      uuu                xx  xx           ddd        ddd
@@ -8,14 +12,6 @@ import datetime
 #    uuu      uuu   rrr    rrr      uuu      uuu   bbb     bbb     uuu      uuu                xx  xx           ddd      ddd
 #    uuu      uuu   rrr     rrr     uuu      uuu   bbb     bbb     uuu      uuu              xx      xx         ddd     ddd
 #    uuuuuuuuuuuu   rrr       rrr   uuuuuuuuuuuu   bbbbbbbbbb      uuuuuuuuuuuu             xx         xx       dddddddd
-
-
-
-
-st.title("StreamLit Documentação:")
-
-
-
 
 
 #Escolher a onde ir
@@ -33,6 +29,13 @@ with st.sidebar:
          ":blue[Formas de Input]",
          ("Nenhuma","Button","Download button","Form Button","Link button","Page Link","Checkbox","Color Picker","Feedback","MultiSelect","Pills","Radio","Segmened Control","Select slider","Select box","Toggle","Number Input","Slider","Data Input","Time Input","Text Input","Text Area","Chat Input")
     )
+
+    escolher2 = st.selectbox(
+        ":orange[Formas de Elementos de Midia]",
+        ("Nenhuma","Image","Logo","Audio","Video")
+    )
+
+
 
 #Formas de Texto    
 def formasdetexto ():
@@ -161,23 +164,7 @@ def formasdetexto ():
     #Code Block
     elif escolher =="Code Block":
             #Caption explicação
-        st.markdown(
-            "# :red[Caption]\n"
-            "## O caption e uma pequena fonte "
-        )
-        st.caption("Aqui esta o teste do caption  "
-            "\nO caption :blue[colorido] em **negrito** e emojis :sunglasses:"
-        )
-
-        caption ='''Codigo:
-        st.caption("Aqui esta o teste do caption  "
-            "\nO caption :blue[colorido] em **negrito** e emojis :sunglasses:"
-        )
-        '''
-
-        st.code(caption,language="python")
-
-        #Code Block(Bloco com o codigo)
+        
         st.markdown("# :blue[Code Block]"
         "\n ## O Code block e uma função que faz aparecer o codigo(utilizado para mostras os codigos anteriores)."
 
@@ -329,12 +316,18 @@ def formasdeinput():
     #Page link
     elif escolher1 =="Page Link":
         st.markdown("# :violet[Page Link]" \
-        "\n ## Diferente do link button ele redireciona tmb so que ele consegue fazer outras abas com outros codigos")
-        with st.echo():
-            st.markdown("")
+        "\n ## Diferente do link button ele redireciona tmb so que ele consegue fazer outras abas com outros codigos:")
+
+        st.markdown("#### Obs:Sempre crie a uma pasta chamada 'pages' desse jeito e coloque o arquivos para fazer outra pagina")
+
+        pagelink = '''
+            st.page_link("outra_pagina.py", label="Pagina Ota", icon="🐜")
+            '''
+
+        st.code(pagelink,language="Python")
 
 
-    #Color picker
+    #Color pickerSA
     elif escolher1 =="Color Picker":
         st.markdown("# :blue[Color Picker]"
                     "\n ## O color picker vc escolhe uma cor.È so isso ")
@@ -519,11 +512,52 @@ def formasdeinput():
             if msg:
                 st.write(f"A mensagem que você escreveu foi: {msg}")
 
-
-
 formasdeinput ()
 
-
-#Final
-
 st.markdown("---")
+
+#Formas de Midia
+def formasmidia():
+    
+    #Imagem
+    if escolher2 =="Image":
+        st.markdown("# :red[Image]" \
+        "\n ## Cria uma imagem.Pode ser por arquivo baixado ou por link")
+        with st.echo():
+            st.image("https://sistemafieto.com.br/gestor/Repositorio/CRP.Sistema.PortalSistemaFIETO.SENAI.CursoSenai/638629619017479512.png")
+        st.markdown("#### Ou da pra fazer de outro jeito:")
+        with st.echo():
+            st.image("senai.png")
+    
+    #Logo
+    elif escolher2 =="Logo":
+        st.markdown("# :blue[Logo]" \
+        "\n ## Cria uma logo que fica no lado esquerdo superior")
+        logo = '''logo = "https://sua-logo.com"
+            \nlogolocal = "logo.png"
+            \nst.logo(logo)
+            \nst.logo(logolocal)'''
+        st.code(logo,language="python")
+            
+
+    #Audio
+    elif escolher2 =="Audio":
+        st.markdown("# :orange[Audio]"
+                    "\n ## Cria um audio que se possa escutar dentro do site:")
+        with st.echo():
+            audio=("https://cdn.discordapp.com/attachments/1126193178295423057/1366167618926542939/Syn_Cole_-_Feel_Good__Future_House__NCS_-_Copyright_Free_Music.mp3?ex=680ff63e&is=680ea4be&hm=664f3a5c8cd14a57e2509d63b0c7e55c4b2b6dd054da7bcb51291587bcfbf74b&")
+            st.audio(audio)
+
+    #Video
+    elif escolher2 =="Video":
+        st.markdown("# :green[Video]"
+                    "\n ## Cria um video dentro do site:")
+        with st.echo():
+            video=("https://www.youtube.com/watch?v=di-itvdeoKI")
+            st.video(video)
+
+formasmidia()
+#Final
+st.markdown("---")
+
+    
