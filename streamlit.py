@@ -524,11 +524,6 @@ def formasdeinput():
 formasdeinput ()
 
 
-#Rodapé
+#Final
+
 st.markdown("---")
-st.caption(
-    
-    " Desenvolvido por Urubu.\n" 
-    "Conta no GitHub: https://github.com/Urubu-Card"
-    
-)
