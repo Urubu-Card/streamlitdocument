@@ -1,5 +1,6 @@
 import streamlit as st
 import time
+import datetime
 #    uuu      uuu   rrrrrrrrrr      uuu      uuu   bbbbbbbbbb      uuu      uuu             xx         xx       dddddddd
 #    uuu      uuu   rrr    rrr      uuu      uuu   bbb     bbb     uuu      uuu               xx     xx         ddd     ddd
 #    uuu      uuu   rrr    rrr      uuu      uuu   bbb     bbb     uuu      uuu                xx  xx           ddd        ddd
@@ -10,16 +11,22 @@ import time
 
 
 
+
 st.title("StreamLit Documentação:")
+
+
+
 
 
 #Escolher a onde ir
 with st.sidebar:
 
+    
+
     st.markdown("# :violet[Qual parte da documentação você deseja ir?]")
     escolher = st.selectbox(
         " :red[Formas de Textos]",
-        ("Nenhuma","Tilte","MarkDown","Header","Write","Badge","Caption","Code Block","Echo","Texto Perfomated","Latex","Divider")
+        ("Nenhuma","Title","MarkDown","Header","Write","Badge","Caption","Code Block","Echo","Texto Perfomated","Latex","Divider")
     
     )
     escolher1 = st.selectbox(
@@ -31,7 +38,7 @@ with st.sidebar:
 def formasdetexto ():
     
     #Title
-    if escolher == "Tilte":
+    if escolher == "Title":
     
 
         #Para fazer um titulo e usado o "st.tittle("Exemplo")"
@@ -43,7 +50,7 @@ def formasdetexto ():
         st.title(":red[Exemplo de titulo]")
 
         title='''Codigo:
-        st.tittle('Titulo')
+        st.title('Titulo')
         '''
 
         st.code(title,language="python")        
@@ -54,7 +61,7 @@ def formasdetexto ():
         #MarkDown explicação
         st.title(" :blue[MarkDown:]")
         st.header("Markdown é tipo uma forma mais facil é rapida de adicionar estilo ao texto utilizando alguns caracters especiais:")
-        st.markdown("# :blue[Alguns exemplos de markwon:]")
+        st.markdown("# :blue[Alguns exemplos de markdown:]")
         st.markdown(":blue[**texto em negrito por exemplo**]")
         st.markdown('#### :blue[Aumentar a fonte]')
         st.markdown('### :blue[Aumentar a fonte]')
@@ -70,7 +77,6 @@ def formasdetexto ():
         '''
 
         st.code(markdown,language="python")
-
 
     #Header
 
@@ -193,7 +199,6 @@ def formasdetexto ():
 
     #Echo
     elif escolher =="Echo":
-        #Echo
         st.markdown("# :orange[Echo]"
             "\n ## O echo ele faz mostra o codigo e executa tipo o exemplo abaixo:")
 
@@ -210,23 +215,21 @@ def formasdetexto ():
             foo ='bar'
         foo='bar'
 
-    #Texto Perfomatted
-
     #Perfomatted Text
     elif escolher =="Texto Perfomated":
         st.markdown(
-            "# :violet[Texto Perfomatted]" \
+            "# :violet[Texto Formatado]" \
             "\n ## O texto perfomatted eu nao etendi muito bem mas ele cria uma caixa com o comando e ele e editavel."
 
         )
         codigo = """
-        PATO XD
+        🐣Piu!!!
         """
 
         st.text_area("Código Python:", codigo, height=200)
 
         log = """
-        PATO XD
+        🐤Piu Piu!!!
         """
 
         st.text_area("Log do Sistema:", log, height=150)
@@ -260,7 +263,7 @@ def formasdetexto ():
                     st.divider()
                     st.write("Texto uau isso e um texto")
                     st.divider()
-                    st.slider("Isso e uma sla o que é",0,100, (0,25))
+                    st.slider("Escolha um número",0,100, (0,25))
                     st.divider()
 
     #Nenhum
@@ -269,7 +272,7 @@ def formasdetexto ():
 
 formasdetexto ()
 
-
+st.markdown("---")
 
 #Formas de Input
 def formasdeinput():
@@ -328,7 +331,7 @@ def formasdeinput():
         st.markdown("# :violet[Page Link]" \
         "\n ## Diferente do link button ele redireciona tmb so que ele consegue fazer outras abas com outros codigos")
         with st.echo():
-            st.markdown("")#st.page_link("teste/lolxd.py",label="Pinto Pinto",icon="🍺")
+            st.markdown("")
 
 
     #Color picker
@@ -350,7 +353,7 @@ def formasdeinput():
             st.write("Você consegue me ver?")
             resposta = st.checkbox("Sim")
             if resposta :
-                st.write("Mentira seu but")
+                st.write("Não consegue não XD🤯")
 
 
     #Feedback
@@ -379,6 +382,153 @@ def formasdeinput():
 
     #Pills
     elif escolher1 =="Pills":
-        st.markdown("# :violet[]")
+        st.markdown("# :violet[Pills]"
+                    "\n## Esse input cria uma caxinha que poder ser selecionada.A caxinha e em forma de pilulas(Por isso o nome 'Pills')")
+        with st.echo():
+            a = "a"
+            #De Foma Multi(Varias podem ser selecionada):
+            op = ["Norte", "Sul", "Leste", "Oeste"]
+            selecionar = st.pills("Direções", op,selection_mode="multi")
+            st.markdown(f"Opções selecionadas: {selecionar}")
+            #De Fomma Single(So uma pode ser selecionada):
+            op2 = ["🍗", "🍪", "🥓", "🍜","🍧","🥨","🍣","🍫"]
+            selecionar2 = st.pills("Escolha uma comida : ", op2,selection_mode="single")
+            st.markdown(f"Sua comida escolhida é : {selecionar2}")
+
+    #Radio
+    elif escolher1 =="Radio":
+        st.markdown("# :red[Radio]"
+                    "\n ## Cria um botão de seleção onde o usuário só pode escolher uma opção de uma lista.\n ## É como aqueles botões redondos que você vê em formulários web — só dá pra marcar uma por vez.")
+        with st.echo():
+            escolha = st.radio(
+                "Escolha um cantor",
+                ["Gustavo Lima","Michael Jackson","Bermas da Segunda Guerra"]
+            )        
+            st.markdown(f"## :rainbow[Você escolheu o: {escolha}]")
+
+    #Segmented Control
+    elif escolher1 =="Segmened Control":
+        st.markdown("# :blue[Segemened Control]"
+                    "\n ## É um componente do Streamlit que cria um controle de opções segmentadas —parecido com abas, mas em formato de botões “lado a lado”.")
+        
+
+        st.markdown("## Escolha de um dos Personagens : ")
+        ota = st.segmented_control(
+            "",
+            ["🍻Bermas","🍺Frank","🍭Davi"]
+        ) 
+        st.markdown(f"## :rainbow[Você escolheu o: {ota}]")
+
+    #Select SLider
+    elif escolher1 =="Select slider":
+        st.markdown("# :red[Select slider]"
+                    "\n ## É um :red[***Slider de seleção***] que permite escolher um valor (ou intervalo) de uma lista de opções")
+        with st.echo():
+            st.markdown("## Escolha a dificuldade:")
+            difi = st.select_slider(
+                "",
+                ["Fácil","Medio","Dificil"]
+            )
+            st.markdown(f"## Dificuldade escolhida foi : {difi}")
+
+    #Select Box 
+    elif escolher1 =="Select Box":
+        st.markdown("# :green[Select Box]"
+                    "\n ## Permite o usuário escolher uma opção de uma lista suspensa.")
+        with st.echo():
+            st.markdown("## Escolha sua fruta favorita")
+            fruta = st.selectbox(
+                ["Maça","Banana","Laranja","Morango"]
+            )
+            st.markdown(f"## Sua fruta favorita é : {fruta}")
+
+    #Toggle
+    elif escolher1 =="Toggle":
+        st.markdown("# :violet[Toggle]"
+                    "\n ## O toggle é um botão de ligar/desligar")
+        with st.echo():
+            modo = st.toggle("Ativar Modo Noturno?")
+            if modo:
+                st.markdown("#### Modo Noturno ativado🌙")
+            else:
+                st.markdown("#### Modo Noturno Desligado ☀")
+
+    #Number Input
+    elif escolher1 =="Number Input":
+        st.markdown("# :orange[Number Input]"
+                    "\n ## Permite o usuário digitar ou escolher um número dentro de um intervalo.")
+        with st.echo():
+            st.markdown("### Digite um numero :")
+            numero = st.number_input("", min_value=0, max_value=100)
+            st.markdown(f"### O numero digitado foi : {numero}")           
+
+    #Slider 
+    elif escolher1 =="Slider":
+        st.markdown("# :blue[Slider]"
+                    "\n ## É aquele controle deslizante que você arrasta para escolher um valor numérico.")
+        with st.echo(): 
+            st.markdown("#### Escolha um valor : ")
+            valor = st.slider (" ",0,100,50)
+            st.markdown(f"Valor escolhido foi : {valor}")
+
+    #Date Input
+    elif escolher1 =="Data Input":
+        st.markdown("# :red[Data Input]"
+                    "\n ## Um calendário para o usuário escolher uma data.")
+        with st.echo():
+            st.markdown("#### Escolha Uma Data : ")
+            data = st.date_input(" ", datetime.date.today())
+            st.markdown(f"#### A Data escolhida foi : {data}")
+            tay = datetime.date(2008,12,2)
+            if data == tay:
+                st.markdown("## O dia que o amor da minha vida nasceu ❤")
+
+    #Time input
+    elif escolher1 =="Time Input":
+        st.markdown("# :violet[Time Input]"
+                    "\n ## Permite o usuário escolher uma hora.")
+        with st.echo():
+            st.markdown("#### Escolha um horario :")
+            tempo = st.time_input(" ",datetime.time(12,0,0 ))
+            st.markdown(f"#### O horario escolhido foi : {tempo}")
+
+    #Text input
+    elif escolher1 =="Text Input":
+        st.markdown("# :orange[Text Input]"
+                    "\n ## Caixinha simples de texto, onde o usuário digita algo.")
+        with st.echo():
+            st.markdown("Qual é o seu nome? ")
+            nome = st.text_input("")
+            st.markdown(f"Olá, {nome}! Tudo Bem?")
+
+    #Text Area
+    elif escolher1 =="Text Area":
+        st.markdown("# :red[Text Area]"
+                    "\n ## Uma caixona de texto para escrever textos maiores.")
+        with st.echo():
+            st.markdown("#### Digite qualquer coisa : ")
+            blabla = st.text_area("")
+            st.markdown(f"#### Vc digitou {blabla}")
+
+    #Chat Input
+    elif escolher1 =="Chat Input":
+        st.markdown("# :blue[Chat Input]"
+                    "\n ## Uma caixinha para entrada de texto parecida com chat.")
+        with st.echo():
+            msg = st.chat_input("Digite sua mensagem")
+            if msg:
+                st.write(f"A mensagem que você escreveu foi: {msg}")
+
+
 
 formasdeinput ()
+
+
+#Rodapé
+st.markdown("---")
+st.caption(
+    
+    " Desenvolvido por Urubu.\n" 
+    "Conta no GitHub: https://github.com/Urubu-Card"
+    
+)
