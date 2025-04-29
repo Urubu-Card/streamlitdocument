@@ -545,7 +545,7 @@ def formasmidia():
         st.markdown("# :orange[Audio]"
                     "\n ## Cria um audio que se possa escutar dentro do site:")
         with st.echo():
-            audio=("https://cdn.discordapp.com/attachments/1126193178295423057/1366167618926542939/Syn_Cole_-_Feel_Good__Future_House__NCS_-_Copyright_Free_Music.mp3?ex=680ff63e&is=680ea4be&hm=664f3a5c8cd14a57e2509d63b0c7e55c4b2b6dd054da7bcb51291587bcfbf74b&")
+            audio=("https://cdn.discordapp.com/attachments/1126193178295423057/1366167618926542939/Syn_Cole_-_Feel_Good__Future_House__NCS_-_Copyright_Free_Music.mp3?ex=6811f07e&is=68109efe&hm=b587f5cabbca6d06e6e35d1f219cafc942acb435a1241cfb5483fce350deeaa0&")
             st.audio(audio)
 
     #Video
