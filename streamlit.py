@@ -1,6 +1,7 @@
 import streamlit as st
-import time
+import pandas as pd
 import datetime
+import numpy as np
 
 st.set_page_config(page_icon="🧾",page_title="Documentação : ")
 st.title("StreamLit Documentação:")
@@ -34,7 +35,10 @@ with st.sidebar:
         ":orange[Formas de Elementos de Midia]",
         ("Nenhuma","Image","Logo","Audio","Video")
     )
-
+    escolher3 = st.selectbox(
+        ":green[Formas de Layouts and Containers]",
+        ("Nenhuma","Colunas","Container","Modal Dialog","Empty","Expander","Popover","Sidebar","Tabs")
+    )
 
 
 #Formas de Texto    
@@ -545,7 +549,7 @@ def formasmidia():
         st.markdown("# :orange[Audio]"
                     "\n ## Cria um audio que se possa escutar dentro do site:")
         with st.echo():
-            audio=("https://cdn.discordapp.com/attachments/1126193178295423057/1366167618926542939/Syn_Cole_-_Feel_Good__Future_House__NCS_-_Copyright_Free_Music.mp3?ex=6811f07e&is=68109efe&hm=b587f5cabbca6d06e6e35d1f219cafc942acb435a1241cfb5483fce350deeaa0&")
+            audio=("https://cdn.discordapp.com/attachments/1126193178295423057/1366167618926542939/Syn_Cole_-_Feel_Good__Future_House__NCS_-_Copyright_Free_Music.mp3?ex=680ff63e&is=680ea4be&hm=664f3a5c8cd14a57e2509d63b0c7e55c4b2b6dd054da7bcb51291587bcfbf74b&")
             st.audio(audio)
 
     #Video
@@ -556,7 +560,67 @@ def formasmidia():
             video=("https://www.youtube.com/watch?v=di-itvdeoKI")
             st.video(video)
 
+st.markdown("---")
 formasmidia()
+#Formas de Layouts e Containers
+def formaslayouts():
+
+    #Colunas
+    if escolher3 == "Colunas":
+        st.markdown("# :red[Colunas(Columns)]"
+                    "\n ## Divide na pagina colunas horizontais(quantas vc quiser)")
+        
+        with st.echo():
+            col1,col2,col3,col4 = st.columns(4)
+            with col1:
+                
+                st.image("https://static.streamlit.io/examples/cat.jpg")
+            with col2:
+               
+                st.image("https://static.streamlit.io/examples/dog.jpg")
+            with col3:
+                
+                st.image("https://static.streamlit.io/examples/owl.jpg")
+            with col4:
+                st.image("https://static.streamlit.io/examples/owl.jpg")
+
+    #Container
+    elif escolher3 =="Container":
+        st.markdown("# :blue[Container]"
+                    "\n ## Cria uma caixa onde tudo feito nela.Fica dentro dela")
+        
+        with st.container():
+            st.write("Aqui fica dentro")
+
+            chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+
+            st.bar_chart(chart_data)
+
+        st.write("Aqui fica fora")
+
+    
+    elif escolher3 == "Modal Dialog":
+        st.markdown("# :orange[Modal Dialog]"
+                    "\n ## É uma janela temporária que aparece no meio da tela, escurecendo o resto do app (igual a um alerta em apps de celular")
+        with st.echo():
+            @st.dialog("Cast your vote")
+            def vote(item):
+                st.write(f"Why is {item} your favorite?")
+                reason = st.text_input("Because...")
+                if st.button("Submit"):
+                    st.session_state.vote = {"item": item, "reason": reason}
+                    st.rerun()
+
+            if "vote" not in st.session_state:
+                st.write("Vote for your favorite")
+                if st.button("A"):
+                    vote("A")
+                
+            else:
+                f"You voted for {st.session_state.vote['item']} because {st.session_state.vote['reason']}" 
+                            
+formaslayouts()
+
 #Final
 st.markdown("---")
 
