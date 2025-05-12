@@ -1,41 +1,32 @@
-Documentação do Streamlit
+<div align="center">
 
-Descrição
+[<img src="https://media.datacamp.com/legacy/v1727712679/image_0dd3c66c35.png" width="144"/>](https://documentacaodourubu.streamlit.app)
 
-Este projeto foi desenvolvido para facilitar a documentação do Streamlit, permitindo que os usuários acessem exemplos e explicações de maneira interativa e organizada. A aplicação oferece uma interface intuitiva que apresenta diversos componentes e funcionalidades do Streamlit.
+  <h1 align="center">Documentação do StreamLit</h1>
 
-Tecnologias Utilizadas
+  <p align="center">
+    <strong>A documentação do Streamlit foi criada com o intuito de ajudar as pessoas, oferecendo uma versão mais fácil e em português de toda a documentação do Streamlit</strong>
+  </p>
 
-Python
 
-Streamlit
 
-Funcionalidades
+![Hydra Launcher Home Page](https://cdn.discordapp.com/attachments/1126193178295423057/1371484813919387648/image.png?ex=68234e44&is=6821fcc4&hm=1e595fdd44d08459e4066af70dfa3bbf13320cda0ea65a6bec070d4c4f1ba030&)
 
-Formas de Texto: Exemplos de utilização de títulos, Markdown, headers, badges, captions, blocos de código, e outras formatações de texto.
+</div>
 
-Formas de Input: Demonstrações de botões, caixas de seleção, controle deslizante, caixas de texto e outros elementos interativos.
+## Conteúdo :
 
-Formas de Mídia: Integração de imagens, vídeos e áudios na aplicação.
+- Demonstração de componentes de texto e formatação
+- Exemplos de inputs interativos
+- Exibição de mídia: imagens, áudios e vídeos
+- Guia prático para o uso de elementos do Streamlit
 
-Como Executar
 
-Clone o repositório:
 
-git clone https://github.com/seu-usuario/streamlit.git
+## Feito por Urubu-Card
 
-Instale as dependências:
+<a href="https://github.com/Urubu-Card/streamlitdocument/graphs/contributors">
+  <img src="https://cdn.discordapp.com/attachments/1126193178295423057/1371486549589622806/1c0f30118944ff98d300099d8c683780.gif?ex=68234fe2&is=6821fe62&hm=b4497dfaaa8d10440ee7980efbeda3eb0229dd59d63923bebc32499dea2c9e89&" />
+</a>
 
-pip install streamlit
 
-Execute a aplicação:
-
-streamlit run app.py
-
-Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
-
-Licença
-
-Este projeto está licenciado sob a licença MIT.
