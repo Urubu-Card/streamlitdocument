@@ -10,7 +10,7 @@
 
 
 
-![Hydra Launcher Home Page](https://cdn.discordapp.com/attachments/1126193178295423057/1371484813919387648/image.png?ex=68234e44&is=6821fcc4&hm=1e595fdd44d08459e4066af70dfa3bbf13320cda0ea65a6bec070d4c4f1ba030&)
+![Pagina Inicial da Documentação](https://cdn.discordapp.com/attachments/1126193178295423057/1371484813919387648/image.png?ex=68234e44&is=6821fcc4&hm=1e595fdd44d08459e4066af70dfa3bbf13320cda0ea65a6bec070d4c4f1ba030&)
 
 </div>
 
