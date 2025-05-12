@@ -21,12 +21,12 @@
 - Exibição de mídia: imagens, áudios e vídeos
 - Guia prático para o uso de elementos do Streamlit
 
-
-<div align="center">
 ## Feito por Urubu-Card
+<div align="center">
+
 
 <a href="https://github.com/Urubu-Card/streamlitdocument/graphs/contributors">
-  [<img src="https://cdn.discordapp.com/attachments/1126193178295423057/1371486549589622806/1c0f30118944ff98d300099d8c683780.gif?ex=68234fe2&is=6821fe62&hm=b4497dfaaa8d10440ee7980efbeda3eb0229dd59d63923bebc32499dea2c9e89&" width="144"/>]
+  <img src="https://cdn.discordapp.com/attachments/1126193178295423057/1371486549589622806/1c0f30118944ff98d300099d8c683780.gif?ex=68234fe2&is=6821fe62&hm=b4497dfaaa8d10440ee7980efbeda3eb0229dd59d63923bebc32499dea2c9e89&" width="144"/>
 </a>
 
 
