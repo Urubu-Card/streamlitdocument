@@ -568,7 +568,7 @@ def formaslayouts():
     #Colunas
     if escolher3 == "Colunas":
         st.markdown("# :red[Colunas(Columns)]"
-                    "\n ## Divide na pagina colunas horizontais(quantas vc quiser)")
+                    "\n ## Divide na pagina colunas verticais(quantas vc quiser)")
         
         with st.echo():
             col1,col2,col3,col4 = st.columns(4)
