@@ -21,7 +21,7 @@
 - Exibição de mídia: imagens, áudios e vídeos
 - Guia prático para o uso de elementos do Streamlit
 
-## Feito por Urubu-Card
+## Feito por Urubu-Card : 
 <div align="center">
 
 
